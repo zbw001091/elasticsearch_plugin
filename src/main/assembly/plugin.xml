@@ -7,7 +7,7 @@
     <includeBaseDirectory>false</includeBaseDirectory>
     <dependencySets>
         <dependencySet>
-            <outputDirectory>/elasticsearch/</outputDirectory>
+            <outputDirectory>/node-monitor-plugin/</outputDirectory>
             <useProjectArtifact>true</useProjectArtifact>
             <useTransitiveDependencies>true</useTransitiveDependencies>
         </dependencySet>
