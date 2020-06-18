@@ -1,20 +1,24 @@
 package com.zbw.espluginbasic.listener;
 
 import org.elasticsearch.cluster.ClusterChangedEvent;
-import org.elasticsearch.cluster.ClusterState;
 import org.elasticsearch.cluster.ClusterStateListener;
 import org.elasticsearch.cluster.metadata.MetaData;
 import org.elasticsearch.cluster.node.DiscoveryNodes;
 import org.elasticsearch.cluster.service.ClusterService;
 import org.elasticsearch.common.inject.Inject;
+import org.elasticsearch.transport.TransportService;
 
 public class HelloListener implements ClusterStateListener {
 	private final ClusterService clusterService;
+	private final TransportService transportService;
 	
 	@Inject
-    public HelloListener(ClusterService clusterService) {
+    public HelloListener(ClusterService clusterService, TransportService transportService) {
         this.clusterService = clusterService;
         this.clusterService.addListener(this);
+        
+        // inject transportService, to record every ClusterState into ES index
+        this.transportService = transportService;
     }
 	
 	/**
