@@ -15,7 +15,7 @@
     <files>
         <file>
             <source>target/classes/plugin-descriptor.properties</source>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory>/node-monitor-plugin/</outputDirectory>
         </file>
         <!-- <file>
             <source>src/main/resources/plugin-security.policy</source>
